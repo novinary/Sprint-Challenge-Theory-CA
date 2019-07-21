@@ -7,6 +7,8 @@ a. Single regex that matches either of these:
     antelope rocks out
     
     antelopes rock out
+  
+  Answer: antelopes? rocks? out?
 
 b. Regex that matches either of:
 
@@ -17,6 +19,8 @@ b. Regex that matches either of:
   but not:
 
     boat
+  
+  Answer: [g|m]oat
 
 c. Regex that matches dates in YYYY-MM-DD format. (Year can be 1-4 digits, and
   month and day can each be 1-2 digits). This does not need to verify the date
@@ -29,6 +33,8 @@ c. Regex that matches dates in YYYY-MM-DD format. (Year can be 1-4 digits, and
     1999-01-20
   
     812-2-10
+
+Answer: (\d{1,4})-(\d{1,2})-(\d{1,2})
 
 ### 2. State Machines
 

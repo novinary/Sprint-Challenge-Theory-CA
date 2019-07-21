@@ -1,10 +1,25 @@
 import pygame, random
 
 def get_new_value(old_gen, old_automata):
-    # TBC - add code to generate the next row of cells,
-    # then replace the return statement below to
-    # return the updated automata
-    return old_automata
+    #** add code to generate the next row of cells **#
+    # initialise updated automata list to return everything 
+    updated_automata = old_automata[:]
+    # calculate the starting index for the new row
+    new_gen_start_idx = (old_gen * SQ_NUM)
+    
+    if old_gen < (SQ_NUM - 1):
+        for i in range (new_gen_start_idx, (new_gen_start_idx + SQ_NUM)):
+            left_idx = old_automata[i-1]
+            right_idx = old_automata[i+1]
+            box = old_automata[i]
+            if left_idx and box and right_idx:
+                updated_automata[i + SQ_NUM] = 0
+            elif not left_idx and not box and not right_idx:
+                updated_automata[i + SQ_NUM] = 0
+            else:
+                updated_automata[i + SQ_NUM] = 1
+     # return the list of updated automata
+    return updated_automata
 
 # Define some colors and other constants
 BLACK = (0, 0, 0)
